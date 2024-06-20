@@ -128,8 +128,18 @@ document.querySelector('.portfolio__popup-close').addEventListener("click", togg
 function populatePopupDetails(parent){
     console.log(parent); //we are getting the parent as the parameter
     document.querySelector('.pp__thumbnail img').src = parent.querySelector('.work__img').src;
+    document.querySelector('.pp__details__title').innerHTML = parent.querySelector(".work__title").innerHTML;
     document.querySelector(".portfolio__popup-subtitle span").innerHTML = parent.querySelector(".details__title").innerHTML;
     document.querySelector(".pp__details__description").innerHTML = parent.querySelector(".details__description").innerHTML;
+    document.querySelector('.pp-git-link').href = parent.querySelector('.git-link').href;
+    var techItems = parent.querySelectorAll('.technologies ul li');
+    var ppTechList = document.querySelector('.pp__technologies');
+    ppTechList.innerHTML = '';
+    techItems.forEach(function(item) {
+        // Clone the list item to avoid moving it from the original location
+        var newItem = item.cloneNode(true);
+        ppTechList.appendChild(newItem);
+    });
 }
 
 //Services Modal

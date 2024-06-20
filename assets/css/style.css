@@ -17,6 +17,12 @@
     --scroll-bar-color: hsl(var(--hue-color), 12%, 38%);
     --scroll-thumb-color: hsl(var(--hue-color), 12%, 23%);
 
+    /* --title-color: hsl(var(--hue-color), 19%, 5%);
+    --text-color: hsl(var(--hue-color), 19%, 5%);
+    --body-color: white;
+    --box-color: grey;
+    --skin-color: hsl(342, 42%, 65%); */
+
     /*======= Font ======*/
     --body-font: 'Poppins', sans-serif;
 
@@ -471,7 +477,8 @@ input {
 }
 /*============== QUALIFICATIONS SECTION ===========*/
 .qualification__container{
-    grid-template-columns: repeat(2, 380px);
+    /* grid-template-columns: repeat(2, 380px); */
+    grid-template-columns: 1fr 680px;
     column-gap: 3rem;
     justify-content: center;
 }
@@ -525,9 +532,33 @@ input {
     display: flex;
     align-items: center;
     column-gap: .4rem;
+    margin-bottom: var(--mb-0-5);
     font-size: var(--small-font-size);
     color: var(--skin-color);
 }
+.tasks__text{
+    font-size: var(--smaller-font-size);
+    margin-bottom: var(--mb-1);
+    text-align: justify;
+}
+.timeline__item ul{
+    list-style: none; /* Remove default bullets */
+    padding-left: 0;
+}
+
+.timeline__item ul li{
+    position: relative;
+    padding-left: 1.5em; /* Space for custom bullet */
+}
+.timeline__item ul li::before {
+    content: "\2022"; /* Unicode for bullet point */
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 1em;
+    line-height: 1.2;
+}
+
 /*============== SKILLS SECTION ===========*/
 .skills__container{
     justify-content: center;
@@ -740,13 +771,13 @@ input {
     margin-bottom: var(--mb-2);
 }
 
-.details__technologies{
+.pp__technologies{
     display: flex;
     flex-wrap: wrap;
     margin-bottom: var(--mb-2);
 }
 
-.details__technologies li{
+.pp__technologies li{
     text-transform: capitalize;
     font-size: var(--small-font-size);
     display: inline-block;
@@ -1410,7 +1441,7 @@ input {
 }
 
 /* For Small devices */
-@media screen and (max-width: 380px){
+@media screen and (max-width: 380px) {
     .container{
         margin-left: var(--mb-1);
         margin-right: var(--mb-1);
